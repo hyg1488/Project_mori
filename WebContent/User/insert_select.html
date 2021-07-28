@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&family=Noto+Serif+KR:wght@900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&display=swap');
+
+    .sub {
+        padding: 5px;
+        font-size: 28px;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    .insert-select {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .btn {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .btn-left {
+        width: 198px;
+        height: 50px;
+        font-size: 20px;
+        color: white;
+        background-color: #3371d1;
+        border: none;
+        outline: none;
+        justify-content: center;
+        text-align: center;
+        font-weight: 700;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    .btn-right {
+        width: 198px;
+        height: 50px;
+        font-size: 20px;
+        color: white;
+        background-color: #c0c0c0;
+        border: none;
+        outline: none;
+        margin-right: 0;
+        font-weight: 700;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    
+    .btn-left:hover, .btn-right:hover {
+        border: 3px solid black;
+    }
+
+    .btn-left, .btn-right {
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .btn-left {
+        margin-right: 10px;
+    }
+
+    .email-send {
+        background-color: white;
+        padding-top: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 980px;
+        height: 200px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+    .message {
+        text-align: center;
+        margin-top: 57px;
+        font-family: 'nanumgothic';
+    }
+
+</style>
+
+<body>
+
+
+    
+    <div class="email-send">
+         <div class="insert-select">
+             <div class="memberForm-top">
+                 <div class="sub">일본 취업 정보 사이트</div>
+                 <div class="sub">'모리'에 오신 것을 환영합니다.</div>
+             </div>
+             <div class="btn">
+                 <input class="btn-left" type="button" value="일반 회원" onclick="location.href='user_insert.html'">
+                 <input class="btn-right" type="button" value="기업 회원" onclick="location.href='company_insert.html'">
+             </div>
+             <div class="message">
+                 
+             </div>
+          </div>
+     </div>
+
+
+</body>
+</html>

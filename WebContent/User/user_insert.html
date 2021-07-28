@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모리 :: 일본 취업 정보</title>
+   
+<style>
+    body {
+        margin: 0;
+        background-color:  rgb(251,251,251);
+    }
+
+    .memberForm-tbl-wrap {
+        background-color: white;
+        padding-top: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 980px;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+    
+    .memberForm-top h2 {
+        margin-top: 35px;
+        margin-left: 160px;
+        margin-bottom: 10px;
+        font-family: 'nanumgothic';
+    }
+
+    table {
+        /* background-color: #f7f7f7; */
+        width: 700px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .line-wrap {
+        height: 10px;
+    }
+
+    .line {
+        border-top: 1px solid #dfe2e8;
+    }
+
+    caption {
+        display: none;
+    }
+    th, td {
+        padding: 0;
+        height: 50px;
+        font-size: 13px;
+    }
+    th {
+        width: 150px;
+        text-align: left;
+        color: #494949;
+        letter-spacing: -2px;
+    }
+    th img {
+        margin-bottom: 2px;
+    }
+    .id_check {
+        margin-top: 10px;
+    }
+
+    .btn,.join{
+        width: 80px;
+        height: 36px;
+        color: white;
+        background-color: #3371d1;
+        border: 1px solid #3371d1;
+        border-radius: 4px;
+        outline: none;
+        box-shadow: 0px 2px 0 #dad8d8;
+    }
+
+    .input-text {
+        width: 300px;
+        height: 34px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+    #email1 {
+        width: 90px;
+    }
+    #email2 {
+        width: 100px;
+    }
+    #email3, #tel, #job {
+        width: 100px;
+        height: 33px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+    .email-info-box {
+        line-height: 1.7em;
+    }
+    
+    .input-tel {
+        width: 166px;
+        height: 34px;
+        margin-left: 10px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+
+    .checkbox {
+        margin-bottom: 2px;
+    }
+
+    .checkbox input[type="checkbox"]{
+        position: relative;
+        top: 2px;
+    }
+    .checkbox label {cursor: pointer;}
+
+    .join-btn-wrap {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .btn, .join, .cancle {cursor: pointer;}
+
+    .cancle {
+        width: 80px;
+        height: 36px;
+        color: #494949;
+        font-weight: bold;
+        background-color: white;
+        border: 1px solid #494949;
+        border-radius: 4px;
+        outline: none;
+        box-shadow: 0px 2px 0 #dad8d8;
+
+    }
+
+</style>
+
+<script>
+    function email() {
+        if (user_frm.email3.value !='1') {
+            user_frm.email2.value = user_frm.email3.value;
+            document.getElementById('email2').readOnly = true;
+        }else {
+            user_frm.email2.value = '';
+            document.getElementById('email2').readOnly = false;
+        }
+    }
+
+    function checkbox() {
+        var chkbox = document.getElementsByName('hobby');
+        var chk = false;
+        for (var x=0; x < chkbox.length; x++) {
+            if (chkbox[x].checked) {
+                chk = true;
+            }
+        }
+
+        if (chk == false) {
+            alert('관심 분야를 하나 이상 선택해 주세요.');
+            return false;
+        }else {
+        }
+    }
+
+    function company_send() {
+        if (user_frm.userid.value=='') {
+            alert('아이디을 입력해 주세요.');
+            user_frm.userid.focus();
+            return;
+        }else if (user_frm.nick.value=='') {
+            alert('닉네임을 입력해 주세요.');
+            user_frm.nick.focus();
+            return;
+        }else if (user_frm.pass.value=='') {
+            alert('비밀번호를 입력해 주세요.');
+            user_frm.pass.focus();
+            return;
+        }else if (user_frm.passck.value=='') {
+            alert('비밀번호 확인을 입력해 주세요.');
+            user_frm.passck.focus();
+            return;
+        }else if (user_frm.pass.value != user_frm.passck.value) {
+            alert('비밀번호 확인이 일치하지 않습니다.');
+            user_frm.passck.focus();
+            return;
+        }else if (user_frm.username.value=='') {
+            alert('이름을 입력해 주세요..');
+            user_frm.username.focus();
+            return;
+        }else if (user_frm.email1.value=='') {
+            alert('이메일을 입력해 주세요.');
+            user_frm.email1.focus();
+            return;
+        }else if (user_frm.email2.value=='') {
+            alert('이메일을 입력해 주세요.');
+            user_frm.email2.focus();
+            return;
+        }else if (user_frm.tel2.value=='') {
+            alert('연락처를 입력해 주세요.');
+            user_frm.tel2.focus();
+            return;
+        }
+
+        if (checkbox() == false) {
+            return;
+        }
+
+        user_frm.action='User?cmd=user_insert';
+        user_frm.submit();
+    }
+
+    function cancle() {
+        var con = confirm('작성하신 내용이 사라집니다.\n이전 페이지로 이동하시겠습니까?')
+
+        if (con == true) {
+            history.back();
+        }
+    }
+</script>
+</head>
+<body>
+
+
+
+    <div class="memberForm-tbl-wrap">
+        <div class="memberForm-top">
+            <h2>회원가입</h2>
+        </div>
+        <form method="POST" name="user_frm" action="User?cmd=user_insert">
+            <table class="memberForm-tbl">
+                <caption>개인 정보</caption>
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="userid"><img src="Img/red_star_spot.png"> 아이디</label></th>
+                        <td>
+                            <input class="input-text" type="text" name="userid" id="userid" placeholder="6~16자 영문, 숫자">
+                            <button class="btn" type="button" onclick="">중복체크</button>
+                            <span id="id_check"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="nick"><img src="Img/red_star_spot.png"> 닉네임</label></th>
+                        <td>
+                            <input class="input-text" type="text" name="nick" id="nick" placeholder="6~16자 영문, 숫자">
+                            <button class="btn" type="button" onclick="">중복체크</button>
+                            <span id="nick_check"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pass"><img src="Img/red_star_spot.png"> 비밀번호</label></th>
+                        <td><input class="input-text" type="password" name="pass" id="pass" placeholder="8~16자 영문, 숫자, 특수문자"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="passck"><img src="Img/red_star_spot.png"> 비밀번호 확인</label></th>
+                        <td><input class="input-text" type="password" name="passck" id="passck"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="username"><img src="Img/red_star_spot.png"> 이름</label></th>
+                        <td><input class="input-text" type="text" name="username" id="username"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="email1"><img src="Img/red_star_spot.png"> 이메일</label></th>
+                        <td>
+                            <input class="input-text" type="text" name="email1" id="email1">
+                            <span>@</span>
+                            <input class="input-text" type="text" id="email2" name="email2" id="email2">
+                            <select name="email3" id="email3" onclick="email()">
+                                <option value="1">직접입력</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                            </select>
+                            <br>
+                            <small class="email-info-box">
+                                비밀번호 분실 시 확인을 위한 메일 주소입니다.
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="tel">연락처</label></th>
+                        <td>
+                            <select name="tel" id="tel">
+                                <option>010</option>
+                                <option>011</option>
+                                <option>016</option>
+                                <option>017</option>
+                                <option>018</option>
+                                <option>019</option>
+                            <input class="input-tel" name="tel2" type="text">
+                            </select>
+                            <br>
+                            <small class="email-info-box">
+                                연락처는 '-' 없이 입력해 주세요.
+                            </small>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="job"><img src="Img/red_star_spot.png"> 관심 업종</label></th>
+                        <td>
+                            <select name="job" id="job">
+                                <option value="IT">IT</option>
+                                <option value="호텔">호텔</option>
+                                <option value="무역">무역</option>
+                                <option value="요식업">요식업</option>
+                                <option value="관광">관광</option>
+                                <option value="번역">번역</option>
+                            </select>
+                            <br>
+                            <small class="email-info-box">
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="hobby"><img src="Img/red_star_spot.png"> 관심 분야</label></th>
+                        <td>
+                            <div class="checkbox" name="checkbox">
+                                <input id="sports" type="checkbox" name="hobby" value="스포츠">
+                                <label for="sports">스포츠</label>
+                                <input id="web" type="checkbox" name="hobby" value="웹서핑">
+                                <label for="web">웹서핑</label>
+                                <input id="trip" type="checkbox" name="hobby" value="여행">
+                                <label for="trip">여행</label>
+                                <input id="video" type="checkbox" name="hobby" value="영상">
+                                <label for="video">영상</label>
+                                <input id="movie" type="checkbox" name="hobby" value="영화">
+                                <label for="movie">영화</label>
+                                <input id="drama" type="checkbox" name="hobby" value="드라마">
+                                <label for="drama">드라마</label>
+                                <input id="game" type="checkbox" name="hobby" value="게임">
+                                <label for="game">게임</label>
+                            </div>
+                            <small>
+                                * 하나 이상 선택해 주세요.
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="join-btn-wrap">
+                                <input class="join" type="button" value="회원가입" onclick="company_send()">
+                                <input class="cancle" type="button" value="취소" onclick="cancle()">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+    
+            </table>
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모리 :: 일본 취업 정보</title>
+
+<style>
+    body {
+        margin: 0;
+        background-color:  rgb(251,251,251);
+        height: 800px;
+    }
+
+    .navbar {
+        margin-bottom: 50px;
+        background-color: white;
+    }
+
+    .navbar-top {
+        background-color: rgb(251,251,251);
+        margin-top: 0;
+        display: flex;
+
+    }
+    
+    .container{
+        width: 950px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        height: 30px;
+        font-size: 11px;
+        color: #9DA4AB;
+        letter-spacing: -1px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .acc_section {
+        padding-right: 10px;
+        padding-top: 7px;
+        float: right;
+    }
+
+    .navbar-middle {
+        background-color: white;
+        border-top: 1px solid rgb(214,214,214);
+        border-bottom: 1px solid rgb(214,214,214);
+        margin-left: auto;
+        margin-right: auto;
+        height: 90px;
+    }
+
+    .container-middle{
+        display: flex;
+        width: 950px;
+        height: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        align-items: center;
+        font-size: 11px;
+
+    }
+
+    .logo img {
+        margin-top: 6px;
+        margin-left: 10px;
+        width : 200px;
+    }
+
+    .search {
+        margin-top: 18px;
+        display: flex;
+        margin-left: 120px;
+        margin-bottom: 1px;
+    }
+
+    .input-search {
+        outline: none;
+        border: none;
+        border-left: 4px solid  black;
+        border-right: none;
+        width: 284px;
+        height: 17px;
+        padding: 7px;
+    }
+
+    .s-btn {
+        outline: none;
+        margin-left: 0;
+        border: 4px solid  black;
+        border-radius: none;
+        background-color:    black;
+        color: aliceblue;
+        width: 60px;
+        height: 32px;
+    }
+
+    .magnifier {
+        background: url('Img/ens_more.png');
+        padding-right: 10px;
+        margin-right: 3px;
+    }
+
+    .right-logo {
+        margin-left: 160px;
+    }
+
+    .right-logo img {
+        display: block;
+        height: 26px;
+        margin-left: 15px;
+        margin-top: 3px;
+        margin-bottom: none;
+    }
+
+    .my_page {
+        font-weight: 800;
+    }
+
+    .popular-search {
+        margin-left: 132px;
+    }
+
+    .navbar-bottom {
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid rgb(214,214,214);
+        display: flex;
+    }
+
+    .container-bottom{
+        display: flex;
+        height: 45px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .navbar-bottom ul{
+        width: 950px;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        float: left;
+    }
+    
+    .navbar-bottom li{
+        margin-left: 12px;
+        padding: 0px 30px 0px 0px;
+    }
+    .navbar-bottom li a{
+        color: black;
+        font-weight: 800;
+        font-size: 13px;
+    }
+    .navbar-bottom .right {
+        margin-left: 570px;
+        padding-right: 0;
+    }
+
+    .navbar-bottom .right a {
+        padding: 0px 0px 0px 30px;
+    }
+
+
+    .memberForm-tbl-wrap {
+        background-color: white;
+        padding-top: 2px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        width: 980px;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+    
+    .memberForm-top h2 {
+        margin-left: 160px;
+        margin-bottom: 10px;
+        font-family: 'nanumgothic';
+    }
+
+    table {
+        /* background-color: #f7f7f7; */
+        width: 700px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .line-wrap {
+        height: 10px;
+    }
+
+    .line {
+        border-top: 1px solid #dfe2e8;
+    }
+
+    caption {
+        display: none;
+    }
+    th, td {
+        padding: 0;
+        height: 50px;
+        font-size: 13px;
+    }
+    th {
+        width: 150px;
+        text-align: left;
+        color: #494949;
+        letter-spacing: -2px;
+    }
+    th img {
+        margin-bottom: 2px;
+    }
+    .id_check {
+        margin-top: 10px;
+    }
+
+    .btn,.join{
+        width: 80px;
+        height: 36px;
+        color: white;
+        background-color: #1f5c93;
+        border: 1px solid #1f5c93;
+        border-radius: 4px;
+        outline: none;
+        box-shadow: 0px 2px 0 #494949;
+    }
+
+    .input-text {
+        width: 300px;
+        height: 34px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+    #email1 {
+        width: 90px;
+    }
+    #email2 {
+        width: 100px;
+    }
+    #email3, #tel, #job {
+        width: 110px;
+        height: 36px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+
+    #capital {
+        width: 150px;
+        height: 36px;
+        padding: 0 0 0 5px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+    .email-info-box {
+        line-height: 1.7em;
+    }
+    
+    .input-tel {
+        width: 166px;
+        height: 34px;
+        margin-left: 10px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+
+    .input-radio {
+        height: 10px;
+    }
+
+    .input-price {
+        width: 100px;
+        height: 34px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+
+    .txt-area {
+        margin-top: 20px;
+        padding: 20px;
+        width: 488px;
+        min-width: 488px;
+        max-width: 488px;
+        height: 200px;
+        min-height: 200px;
+        max-height: 200px;
+    }
+
+    .input-addr {
+        margin-top: 10px;
+        width: 492px;
+        height: 34px;
+        padding: 0 0 0 12px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+
+    .join-btn-wrap {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .cancle {
+        width: 80px;
+        height: 36px;
+        color: #494949;
+        font-weight: bold;
+        background-color: white;
+        border: 1px solid #494949;
+        border-radius: 4px;
+        outline: none;
+        box-shadow: 0px 2px 0 #807e7e;
+    }
+
+    .footer {
+        margin-top: 50px;
+        height: 100px;
+        background-color: #494949;
+    }
+
+    .info {
+        padding: 40px 0;
+        color: white;
+        text-align: center;
+    }
+
+</style>
+
+<script>
+
+    function search() {
+        if (search_frm.search.value=='') {
+            alert('검색어를 입력해 주세요.');
+            search_frm.search.focus();
+            return;
+        }
+    }
+
+</script>
+</head>
+<body>
+    <div class="navbar">
+
+        <div class="navbar-top">
+            <!-- 최상단 메뉴 -->
+            <div class="container">
+                <div class="acc_section">
+                    <a href="">로그인</a>
+                    <span>|</span>
+                    <a href="">회원가입</a>
+                </div>
+                <!-- 최상단 메뉴 끝 -->
+            </div>
+        </div>
+        <div class="navbar-middle">
+            <!-- 상단 시작 -->
+            <div class="container-middle">
+                <!-- 로고 영역 -->
+                <div class="logo">
+                    <a href=""><img src="Img/302.png"></a>
+                </div>
+                <!-- 검색 영역 -->
+                <form class="search_frm" name="search_frm" action="">
+                    <div class="search">
+                        <input type="text"  name="search" class="input-search" value="" placeholder="검색어를 입력해 주세요">
+                        <a href="javascript:search()"><input type="button" class="s-btn" value="검색"></a>
+                    </div>
+                    <small class="popular-search">
+                        <span class="magnifier">&nbsp;</span>
+                        <a href="">IT기업</a> | 
+                        <a href="">무역</a> | 
+                        <a href="">사무</a> |
+                        <a href="">요식업</a> |
+                        <a href="">한인 회사</a> |
+                        <a href="">호텔리어</a> |
+                        <a href="">유학</a>
+                    </small>
+                </form>
+                <div class="right-logo">
+                    <a href=""><img src="Img/ico_my.png" id="my_page"></a>
+                    <div class="my_page">마이페이지</div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-bottom">
+            <div class="container-bottom">
+                <ul>
+                    <li><a href="">일본어 진단</a></li>
+                    <li><a href="">기업 정보</a></li>
+                    <li class="right"><a href="">커뮤니티</a><a href="">공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+    <div class="memberForm-tbl-wrap">
+        <div class="memberForm-top">
+            <h2>기업 회원가입</h2>
+        </div>
+        <form name="company_frm" method="POST" onsubmit="return false">
+            <table class="memberForm-tbl">
+                <caption>기업 정보</caption>
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="userid"><img src="Img/red_star_spot.png"> 아이디</label></th>
+                        <td>
+                            <input class="input-text" type="text" name="userid" id="userid" placeholder="6~16자 영문, 숫자">
+                            <button class="btn" type="submit" onclick="">중복체크</button>
+                            <span id="id_check"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pass"><img src="Img/red_star_spot.png"> 비밀번호</label></th>
+                        <td><input class="input-text" type="password" name="pass" id="pass" placeholder="8~16자 영문, 숫자, 특수문자"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="passck"><img src="Img/red_star_spot.png"> 비밀번호 확인</label></th>
+                        <td><input class="input-text" type="password" name="passck" id="passck"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="companyname"><img src="Img/red_star_spot.png"> 기업명</label></th>
+                        <td><input class="input-text" type="text" name="companyname" id="companyname"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="Img/red_star_spot.png"><label for="username"> 대표자 이름</label></th>
+                        <td><input class="input-text" type="text" name="username" id="username"></td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr style="height: 70px;">
+                        <th scope="row"><label for="email1"><img src="Img/red_star_spot.png"> 관리자 이메일</label></th>
+                        <td>
+                            <input class="input-text" type="text" name="email1" id="email1">
+                            <span>@</span>
+                            <input class="input-text" type="text" name="email2" id="email2">
+                            <select name="email3" id="email3">
+                                <option>직접입력</option>
+                                <option>naver.com</option>
+                                <option>gmail.com</option>
+                                <option>nate.com</option>
+                                <option>hanmail.net</option>
+                            </select>
+                            <br>
+                            <small class="email-info-box">
+                                * 비밀번호 분실 시 확인을 위한 메일 주소입니다.
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="tel"> 관리자 연락처</label></th>
+                        <td>
+                            <select name="tel" id="tel">
+                                <option>010</option>
+                                <option>011</option>
+                                <option>016</option>
+                                <option>017</option>
+                                <option>018</option>
+                                <option>019</option>
+                            <input class="input-tel" type="text">
+                            </select>
+                            <br>
+                            <small class="email-info-box">
+                                * 연락처는 '-' 없이 입력해 주세요.
+                            </small>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="job"><img src="Img/red_star_spot.png"> 업종</label></th>
+                        <td>
+                            <select name="job" id="job">
+                                <option>IT</option>
+                                <option>호텔</option>
+                                <option>무역</option>
+                                <option>요식업</option>
+                                <option>관광</option>
+                                <option>번역</option>
+                            </select>
+                            <br>
+                            <small class="email-info-box">
+                                * 기업 업종을 기준으로 매칭이 제공됩니다.
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="radio"><img src="Img/red_star_spot.png"> 고용 형태</label></th>
+                        <td>
+                            <input class="input-radio" type="radio" name="radio">정규직
+                            <input class="input-radio" type="radio" name="radio">계약직
+                            <input class="input-radio" type="radio" name="radio">인턴
+                            <input class="input-radio" type="radio" name="radio">기타
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="capital">&nbsp; 자본금</label></th>
+                        <td>
+                            <input class="input-price" type="text" name="capital" id="capital">
+                            <br>
+                            <small class="email-info-box">
+                                * 만 엔 단위로 숫자만 입력해 주세요. 예) 천 만 엔 = 1,000
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="year"><img src="Img/red_star_spot.png"> 설립연도</label></th>
+                        <td>
+                            <input class="input-price" type="text" name="year" id="year">
+                            <br>
+                            <small class="email-info-box">
+                                * 숫자만 입력해 주세요. 예) 2020년 = 2020
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="contents">&nbsp; 기업 소개</label></th>
+                        <td>
+                            <textarea class="txt-area" id="contents"></textarea>
+                            <br>
+                            <small class="email-info-box">
+                                * 만 엔 단위로 숫자만 입력해 주세요. 예) 천 만 엔 = 1,000
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="addr"><img src="Img/red_star_spot.png"> 주소</label></th>
+                        <td>
+                            <input class="input-addr" type="text" name="addr" id="addr">
+                            <br>
+                            <small class="email-info-box">
+                                * 영어 주소를 입력해 주세요.
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="homepage">&nbsp; 홈페이지</label></th>
+                        <td>
+                            <input class="input-addr" type="text" name="homepage" id="homepage">
+                            <br>
+                            <small class="email-info-box">
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="sawon"><img src="Img/red_star_spot.png"> 사원수</label></th>
+                        <td>
+                            <input class="input-price" type="text" name="sawon" id="sawon">
+                            <br>
+                            <small class="email-info-box">
+                                * 숫자만 입력해 주세요. 예) 10명 = 10
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-wrap" colspan="2">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="join-btn-wrap">
+                                <input class="join" type="button" value="회원가입" onclick="company_send()">
+                                <input class="cancle" type="button" value="취소">
+                            </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+    
+            </table>
+        </form>
+
+    </div>
+
+    <footer class="footer">
+        <div class="info">
+            footer 영역
+        </div>
+        
+    </footer>
+
+</body>
+</html>

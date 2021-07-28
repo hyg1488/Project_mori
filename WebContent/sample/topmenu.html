@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e7462ea469.js" crossorigin="anonymous"></script>
+    <title>모리 :: 일본 취업 정보</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&family=Noto+Serif+KR:wght@900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&display=swap');
+
+
+    body {
+        margin: 0;
+        background-color:  white;
+    }
+    .navbar {
+        margin-bottom: 50px;
+        background-color: white;
+        font-family: 'Nanum Gothic', sans-serif;
+        letter-spacing: 0.5px;
+    }
+
+    .navbar-top {
+        background-color: rgb(251,251,251);
+        margin-top: 0;
+        display: flex;
+
+    }
+    
+    .container{
+        width: 950px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        align-items: center;
+        height: 30px;
+        font-size: 11px;
+        color: #9DA4AB;
+        letter-spacing: -1px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .acc_section {
+        text-align: right;
+        width: 950px;
+        padding-right: 10px;
+        padding-top: 7px;
+        float: right;
+    }
+
+
+    .acc_section a {
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+
+
+    .navbar-middle {
+        background-color: white;
+        border-top: 1px solid rgb(214,214,214);
+        border-bottom: 1px solid rgb(214,214,214);
+        margin-left: auto;
+        margin-right: auto;
+        height: 90px;
+    }
+
+    .container-middle{
+        display: flex;
+        width: 950px;
+        height: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        align-items: center;
+        font-size: 11px;
+
+    }
+
+    .logo img {
+        margin-top: 6px;
+        width : 200px;
+    }
+
+    .search {
+        margin-top: 18px;
+        display: flex;
+        margin-left: 120px;
+        margin-bottom: 1px;
+    }
+
+    .input-search {
+        outline: none;
+        border: none;
+        border-left: 4px solid  black;
+        border-right: none;
+        width: 284px;
+        height: 17px;
+        padding: 7px;
+    }
+
+    .s-btn {
+        cursor: pointer;
+        outline: none;
+        margin-left: 0;
+        border: 4px solid  black;
+        border-radius: none;
+        background-color:    black;
+        color: aliceblue;
+        width: 60px;
+        height: 32px;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    
+
+    .magnifier {
+        background: url('Img/ens_more.png');
+        padding-right: 10px;
+        margin-right: 3px;
+    }
+
+    .right-logo {
+        margin-left: 160px;
+    }
+
+    .right-logo img {
+        display: block;
+        height: 26px;
+        margin-left: 15px;
+        margin-top: 3px;
+        margin-bottom: none;
+    }
+
+    .my_page {
+        font-weight: 800;
+    }
+
+    .popular-search {
+        margin-left: 76px;
+    }
+
+    .navbar-bottom {
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid rgb(214,214,214);
+        display: flex;
+    }
+
+    .container-bottom{
+        display: flex;
+        height: 45px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .navbar-bottom ul{
+        width: 950px;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        float: left;
+    }
+    
+    .navbar-bottom li{
+        margin-left: 12px;
+        padding: 0px 30px 0px 0px;
+    }
+    .navbar-bottom li a{
+        color: black;
+        font-weight: 800;
+        font-size: 13px;
+    }
+    .navbar-bottom .right {
+        margin-left: 570px;
+        padding-right: 0;
+    }
+
+    .navbar-bottom .right a {
+        padding: 0px 0px 0px 30px;
+    }
+
+    .memberForm-tbl-wrap {
+        background-color: white;
+        margin-top: 100px;
+        padding-top: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 480px;
+        height: 600px;
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+    }
+
+    .memberForm-top h2 {
+        text-align: center;
+        font-family: 'nanumgothic';
+    }
+
+    .login-form {
+        width: 100px;
+    }
+
+    .id-wrap {
+        margin-top: 40px;
+    }
+
+    .pass-wrap {
+        margin-top: 20px;
+    }
+
+    span {
+        margin-left: 57px;
+        font-size: 12px;
+        font-weight: bold;
+        
+    }
+
+    .input-user {
+        padding: 0 16px;
+        margin-top: 5px;
+        width: 340px;
+        height: 38px;
+        margin-left: 50px;
+        outline: none;
+        border: 0.1rem solid #d3d3d3;
+        background-color: rgb(232, 240, 254);
+    }
+
+    .s-pass {
+        color: #aaaaaf;
+        margin-top: 30px;
+        margin-left: 270px;
+        display: inline-block;
+    }
+    .s-pass a {
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        color: #aaaaaf;
+    }
+
+    .insert-user {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn-wrap {
+        margin-top: 60px;
+    }
+
+    .btn {
+        width: 377px;
+        height: 40px;
+        background-color: #3371d1;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-family: 'nanumgothic';
+        cursor: pointer;
+    }
+
+    .copyright-wrap {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .copyright {
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: center;
+        font-weight: bold;
+        color: #aaaaaf;
+    }
+
+    footer {
+        margin-top: 100px;
+        display: flex;
+        background-color: #343434;
+        height: 200px;
+        font-family: 'Nanum Gothic', sans-serif;
+        letter-spacing: 0.5px;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: white;
+    }
+    .footer-container {
+        width: 950px;
+        height: 75px;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 100px;
+        font-size: 14px;
+
+        
+    }
+    .navbar-menu, .navbar-icon {
+        width: 950px;
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .person {
+        color: rgb(255, 238, 0);
+    }
+
+    .navbar-menu li, .navbar-icon li{
+        padding: 8px 12px;
+        color: white;
+    }
+
+    .navbar-icon {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .copyright {
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        color: white;
+    }
+
+    .mori {
+        padding-right: 38px;
+    }
+
+    table {
+        background-color: white;
+        font-size: 12px;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    table a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .comm-top {
+        font-weight: bold;
+        border-bottom: 1px solid gray;
+    }
+
+    .comm-list td {
+        padding: 8px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.178);
+
+    }
+
+    .comm-top {
+        text-align: center;
+    }
+
+    .comm-body {
+        text-align: center;
+    }
+
+    .num {
+        width : 7%;
+    }
+    .sub {
+        width: 50%;
+    }
+    .comm-body .sub {
+        padding-left: 10px;
+        text-align: left;
+    }
+    .name {
+        width: 10%;
+    }
+    .regdate {
+        width: 20%;
+    }
+    .readcnt {
+        width: 10%;
+    }
+
+    .page-area {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .comm-body:hover {
+        background-color: rgba(10, 147, 238, 0.096);
+    }
+
+    .search-area {
+        height: 40px;
+        margin-right: 20px;
+        margin-top: 15px;
+        text-align: right;
+    }
+
+    .select-search {
+        font-size: 12px;
+        height: 31.2px;
+        padding-left: 5px;
+        font-family: 'Nanum Gothic', sans-serif;
+        border: 1px solid #999;
+        margin-top: 2px;
+    }
+
+    .input-search {
+        outline: none;
+        border: none;
+        border-left: 4px solid  #3371d1;
+        border-right: none;
+        width: 200px;
+        height: 17px;
+        padding: 7px;
+    }
+
+    .btn-search {
+        margin-top: 2px;
+        cursor: pointer;
+        outline: none;
+        margin-left: 0;
+        border: 4px solid #3371d1;
+        border-radius: none;
+        background-color: #3371d1;
+        color: aliceblue;
+        width: 48px;
+        height: 29px;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    .btn-comm-write {
+        border: 1px solid #999;
+        margin-left: 135px;
+        margin-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: white;
+    }
+
+    .search-area i {
+        color: rgba(5, 5, 5, 0.897);
+        margin-right: 3px;
+        padding-bottom: 2px;
+    }
+
+    .search-area a {
+        font-size: 12px;
+    }
+
+</style>
+
+<script>
+    function search_send(formEI) {
+        if (formEI.search.value=='') {
+            alert('검색어를 입력해 주세요.');
+            formEI.search.focus();
+            return false;
+        }
+    }
+
+    function search() {
+        if (search_frm.search.value=='') {
+            alert('검색어를 입력해 주세요.');
+            search_frm.search.focus();
+            return;
+        }
+
+        search_frm.submit();
+    }
+
+</script>
+</head>
+<body>
+    <div class="navbar">
+
+        <div class="navbar-top">
+            <!-- 최상단 메뉴 -->
+            <div class="container">
+                <div class="acc_section">
+                    <a href="">로그인 &nbsp;&nbsp;&nbsp;| </a>
+                    <a href="">회원가입</a>
+                </div>
+                <!-- 최상단 메뉴 끝 -->
+            </div>
+        </div>
+        <div class="navbar-middle">
+            <!-- 상단 시작 -->
+            <div class="container-middle">
+                <!-- 로고 영역 -->
+                <div class="logo">
+                    <a href=""><img src="Img/302.png"></a>
+                </div>
+                <!-- 검색 영역 -->
+                <form class="search_frm" name="search_frm" action="Index?cmd=search" onsubmit="return search_send(this)">
+                    <div class="search">
+                        <input style="border-left: 4px solid  black;" type="text"  name="search" class="input-search" value="" placeholder="검색어를 입력해 주세요">
+                        <a href="javascript:search()"><input type="button" class="s-btn" value="검색"></a>
+                    </div>
+                    <small class="popular-search">
+                        <span class="magnifier">&nbsp;</span>
+
+                        <!-- 자주 검색한 단어 -->
+                        <a href="">IT기업</a> | 
+                        <a href="">무역</a> | 
+                        <a href="">사무</a> |
+                        <a href="">요식업</a> |
+                        <a href="">한인 회사</a> |
+                        <a href="">호텔리어</a> |
+                        <a href="">유학</a>
+                        <!-- 자주 검색한 단어 끝 부분-->
+
+                    </small>
+                </form>
+                <div class="right-logo">
+                    <a href=""><img src="Img/ico_my.png" id="my_page"></a>
+                    <div class="my_page"><a href="">마이페이지</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-bottom">
+            <div class="container-bottom">
+                <ul>
+                    <li><a href="">일본어 진단</a></li>
+                    <li><a href="">기업 정보</a></li>
+                    <li class="right"><a href="">커뮤니티</a><a href="">공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="comm-wrap">
+        <table class="comm-list">
+            <thead>
+                <tr class="comm-top">
+                    <td class="num">번호</td>
+                    <td class="sub">제목</td>
+                    <td class="name">작성자</td>
+                    <td class="regdate">작성일</td>
+                    <td class="readcnt">조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub"><a href="">안녕하세요</a></td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+                <tr class="comm-body">
+                    <td class="num">1</td>
+                    <td class="sub">안녕하세요</td>
+                    <td class="name">김수한</td>
+                    <td class="regdate">2021-01-31</td>
+                    <td class="readcnt">102</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="page-area">
+                페이징 처리 부분
+            </div>
+            <div class="search-area">
+                <select class="select-search">
+                    <option>
+                        제목
+                    </option>
+                    <option>
+                        내용
+                    </option>
+                    <option>
+                        작성자
+                    </option>
+                </select>
+                <input class="input-search" type="text"><input class="btn-search" type="submit" value="검색">
+                <span class="btn-comm-write"><a href="" style="text-decoration: none; color: black;"><i class="fas fa-edit"></i>글쓰기</a></span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <ul class="navbar-menu">
+                <li><a class="person" href="">개인정보처리방침</a></li>
+                <li><a href="">이메일무단수집거부</a></li>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">홈페이지오류신고</a></li>
+            </ul>
+            <ul class="navbar-icon">
+                <li><a href=""><i class="fab fa-instagram"></a></i></li>
+                <li><a href=""><i class="fab fa-facebook-square"></a></i></li>
+                <li><a href=""><i class="fab fa-twitter-square"></a></i></li>
+            </ul>
+            <ul class="mori">
+                <li class="copyright">ⓒ2020 MORI.</li>
+            </ul>
+        </div>
+    </footer>
+   
+</body>
+</html>
